@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'ia1!wa=um*(g@#%teo!c*h*_el5jc%0i^vnz_ipdz^)a^^=b#s'
-
+DATABASE_URL = "postgres://ycvnyurvcewwhz:fe40e65a10d8d235667f7ca1749684241ebf57f1ea6e0a3fa5e7eabba4c745df@ec2-54-217-235-137.eu-west-1.compute.amazonaws.com:5432/d8q0l71jnks3cj"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -73,18 +73,23 @@ WSGI_APPLICATION = 'djangoshopsite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'djangoshopsite',
         'USER':'tarik',
         'PASSWORD': 'kimene',
-        'HOST':'localhost',
+        'HOST':'postgres://ycvnyurvcewwhz:fe40e65a10d8d235667f7ca1749684241ebf57f1ea6e0a3fa5e7eabba4c745df@ec2-54-217-235-137.eu-west-1.compute.amazonaws.com:5432/d8q0l71jnks3cj',
         'PORT':''
     }
 }
-
+"""
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL')
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
