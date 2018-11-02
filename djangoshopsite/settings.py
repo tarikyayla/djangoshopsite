@@ -25,7 +25,7 @@ SECRET_KEY = 'ia1!wa=um*(g@#%teo!c*h*_el5jc%0i^vnz_ipdz^)a^^=b#s'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['djangoshopsite.herokuapp.com']
 LOGIN_URL = "/"
 LOGIN_REDIRECT_URL = "/"
 # Application definition
