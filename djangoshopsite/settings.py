@@ -27,7 +27,7 @@ SECRET_KEY = 'ia1!wa=um*(g@#%teo!c*h*_el5jc%0i^vnz_ipdz^)a^^=b#s'
 DEBUG = False
 """
 SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'main',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +136,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
