@@ -1,0 +1,29 @@
+{% if user.is_authenticated %}
+    <div class="amado-btn-group mt-30 mb-100">
+        <ul class="profileList" style="list-style: none">
+            <li class="btn amado-btn"style="font-size: 15px;">Logged in as {{ user.username }}</li>
+            <li><span style="alignment: left;"><i class="fas fa-shopping-basket"></i></span><a href="/profile" class="">Profile</a></li>
+            <li><span><i class="fas fa-shopping-cart"></i></span><a href="/cart">Cart</a></li>
+            <li><span><i class="fas fa-sign-out-alt"></i></span><a href="/logout"  class="mb-15">Logout</a></li>
+        </ul>
+
+    </div>
+{% else %}
+    <div class="amado-btn-group mt-30 mb-100">
+                <a href="#login-modal" class="trigger-btn btn amado-btn mb-15" data-toggle="modal">Login</a>
+                <a href="#register-modal" class="trigger-btn btn amado-btn mb-15" data-toggle="modal">Register</a>
+    </div>
+{% endif %}
+
+<style>
+    .profileList span{
+        padding-right: 10px;
+    }
+    .profileList li{
+
+        margin-bottom: 5px;
+    }
+</style>
+
+
+

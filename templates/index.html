@@ -1,0 +1,32 @@
+{% extends '_template.html' %}
+{% block content %}
+{% load staticfiles %}
+        <!-- Product Catagories Area Start -->
+        <div class="products-catagories-area clearfix">
+            <div class="amado-pro-catagory clearfix">
+
+                <!-- Single Catagory -->
+             {% if not urunler  %}
+                 <div class="single-products-catagory clearfix" style="width: 250px;height: 300px;">
+                    <p>Aramanıza uygun öğe bulunamadı.</p>
+                 </div>
+            {% else %}
+             {% for urun in urunler %}
+
+                    <div class="single-products-catagory clearfix" style="width: 250px;height: 300px;">
+
+                    <a href="/urundetay/{{ urun.id }}">
+                        <img src="{{ urun.urun_gorseli }}" style="width: 250px;height: 250px;"alt="">
+                        <!-- Hover Content -->
+                        <span>{{ urun.urun_ismi}}</span>
+                    </a>
+                </div>
+
+             {% endfor %}
+            {% endif %}
+            </div>
+        </div>
+{% endblock %}
+        <!-- Product Catagories Area End -->
+
+  

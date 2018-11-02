@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "/home/tarik/Desktop/djangoshopsite/myenv/bin/python",
+    "python.linting.pylintArgs": ["--load-plugins", "pylint_django"],
+}
