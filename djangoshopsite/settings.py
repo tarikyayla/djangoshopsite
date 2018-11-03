@@ -14,18 +14,9 @@ import os
 import dj_database_url
 from decouple import config
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-"""
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ia1!wa=um*(g@#%teo!c*h*_el5jc%0i^vnz_ipdz^)a^^=b#s'
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-"""
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = True
 DATABASES = {
@@ -37,7 +28,6 @@ DATABASES = {
 ALLOWED_HOSTS = ['djangoshopsite.herokuapp.com','localhost']
 LOGIN_URL = "/"
 LOGIN_REDIRECT_URL = "/"
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -81,20 +71,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'djangoshopsite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-"""
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djangoshopsite',
-        'USER':'tarik',
-        'PASSWORD': 'kimene',
-        'HOST':'postgres://ycvnyurvcewwhz:fe40e65a10d8d235667f7ca1749684241ebf57f1ea6e0a3fa5e7eabba4c745df@ec2-54-217-235-137.eu-west-1.compute.amazonaws.com:5432/d8q0l71jnks3cj',
-        'PORT':''
-    }
-}
-"""
 DATABASES = {
     'default': dj_database_url.config(
         default=config('DATABASE_URL')
