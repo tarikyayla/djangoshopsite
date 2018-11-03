@@ -12,8 +12,8 @@ class SatisKategorileri(models.Model):
 class Urunler(models.Model):
     id = models.AutoField(primary_key=True)
     kategori = models.ForeignKey(SatisKategorileri,on_delete=models.CASCADE)
-    urun_gorseli = models.CharField(max_length=150)
-    urun_ismi = models.CharField(max_length=100)
+    urun_gorseli = models.CharField(max_length=400)
+    urun_ismi = models.CharField(max_length=400)
     fiyat = models.FloatField(max_length=50)
     def __str__(self):
         return self.urun_ismi
